@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FifthAvenue Pizza Co. | Online Food Ordering</title>
+    
+    <!-- Meta Descriptions and SEO tags -->
+    <meta name="description" content="Order fresh, premium pizzas, burgers, shakes, and sides online from FifthAvenue Pizza Co. Free delivery inside Chishtian. Chasing flavours!">
+    <meta name="keywords" content="FifthAvenue, Pizza, Burger, Shakes, Chishtian, Food delivery, Online ordering, Pakistan">
+    
+    <!-- Custom styling & icons -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="brand-logo" id="logo-trigger">
+                <!-- Fallback to Font icon, styled as brand colors -->
+                <i class="fas fa-pizza-slice" style="color: var(--secondary); font-size: 1.8rem;"></i>
+                <div class="brand-name">FIFTH<span>AVENUE</span></div>
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="#menu-container" class="nav-link">Menu</a></li>
+                <li><a href="#about-footer" class="nav-link">About</a></li>
+                <li><a href="#contact-footer" class="nav-link">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="cart-trigger" aria-label="Open Cart Drawer">
+                    <i class="fas fa-shopping-basket"></i>
+                    <span class="cart-count" style="display: none;">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-shipping-fast"></i> FREE DELIVERY IN CHISHTIAN
+                </div>
+                <h1 class="hero-title">Chasing <span>Flavours</span>, Serving <em>Quality</em></h1>
+                <p class="hero-subtitle">Experience the finest selection of premium crust pizzas, hand-crafted smash burgers, creamy thick shakes, and crispy wings. Made fresh, delivered fast, and free!</p>
+                <div class="hero-actions">
+                    <a href="#menu-container" class="btn btn-primary"><i class="fas fa-utensils"></i> View Menu</a>
+                    <a href="#menu-container" onclick="document.querySelector('[data-category=\'deals\']').click()" class="btn btn-secondary"><i class="fas fa-fire"></i> Hot Deals</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Info Strip -->
+    <section class="info-strip">
+        <div class="info-container">
+            <div class="info-box">
+                <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
+                <div>
+                    <h3 class="info-title">UAN Helpline</h3>
+                    <p class="info-desc">0304 111 6621 | 063 250 1555</p>
+                </div>
+            </div>
+            <div class="info-box">
+                <div class="info-icon"><i class="fas fa-motorcycle"></i></div>
+                <div>
+                    <h3 class="info-title">Free & Fast Delivery</h3>
+                    <p class="info-desc">Freshly baked hot meals right at your doorstep</p>
+                </div>
+            </div>
+            <div class="info-box">
+                <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <div>
+                    <h3 class="info-title">Our Main Outlet</h3>
+                    <p class="info-desc">Bahawalnagar Road, Chishtian</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Menu Area -->
+    <main class="menu-section" id="menu-container">
+        <div class="section-header">
+            <h2 class="section-title">Explore Our <span>Menu</span></h2>
+            <p class="section-desc">Select individual items or group value packs to curate your perfect meal</p>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <i class="fas fa-search"></i>
+            <input type="text" id="search-menu" class="search-input" placeholder="Search for pizzas, burgers, shakes...">
+        </div>
+
+        <!-- Category Selection Tabs -->
+        <div class="menu-tabs">
+            <button class="menu-tab active" data-category="deals"><i class="fas fa-box-open"></i> Deals</button>
+            <button class="menu-tab" data-category="pizzas"><i class="fas fa-pizza-slice"></i> Pizzas</button>
+            <button class="menu-tab" data-category="burgers"><i class="fas fa-hamburger"></i> Burgers</button>
+            <button class="menu-tab" data-category="sandwiches"><i class="fas fa-bread-slice"></i> Sandwiches</button>
+            <button class="menu-tab" data-category="sides"><i class="fas fa-hotdog"></i> Sides & Fries</button>
+            <button class="menu-tab" data-category="wraps"><i class="fas fa-scroll"></i> Wraps</button>
+            <button class="menu-tab" data-category="pasta"><i class="fas fa-utensils"></i> Pasta</button>
+            <button class="menu-tab" data-category="platters"><i class="fas fa-cubes"></i> Platters</button>
+            <button class="menu-tab" data-category="rolls_wings"><i class="fas fa-drumstick-bite"></i> Wings & Rolls</button>
+            <button class="menu-tab" data-category="shakes"><i class="fas fa-glass-whiskey"></i> Shakes</button>
+            <button class="menu-tab" data-category="ice_cream"><i class="fas fa-ice-cream"></i> Ice Cream</button>
+            <button class="menu-tab" data-category="drinks"><i class="fas fa-cocktail"></i> Drinks</button>
+        </div>
+
+        <!-- Menu Cards Grid -->
+        <div class="menu-grid" id="menu-grid">
+            <!-- Dynamically populated from app.js -->
+        </div>
+    </main>
+
+    <!-- Cart Drawer (Slides from Right) -->
+    <div class="drawer-overlay" id="drawer-overlay"></div>
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="drawer-header">
+            <div class="drawer-title">
+                <i class="fas fa-shopping-basket" style="color: var(--primary);"></i> Your Basket
+            </div>
+            <button class="drawer-close" onclick="toggleCartDrawer()"><i class="fas fa-times"></i></button>
+        </div>
+        
+        <div class="drawer-body" id="cart-items-container">
+            <!-- Dynamic Cart Items -->
+        </div>
+
+        <div class="drawer-footer">
+            <div class="total-row">
+                <span>Subtotal:</span>
+                <span id="cart-subtotal">Rs. 0/-</span>
+            </div>
+            <div class="total-row">
+                <span>Delivery:</span>
+                <span style="color: var(--secondary); font-weight: 700;">FREE</span>
+            </div>
+            <div class="total-row grand">
+                <span>Total:</span>
+                <span id="cart-total">Rs. 0/-</span>
+            </div>
+            <button class="btn btn-primary checkout-btn" id="checkout-trigger" disabled>
+                Proceed to Checkout <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Pizza/Burger Customization Modal -->
+    <div class="modal-overlay" id="customize-modal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3 class="modal-title" id="customize-title">Customize Item</h3>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body" id="customize-body">
+                <!-- Customization items (radios, checkboxes) loaded via JS -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline close-modal">Cancel</button>
+                <button class="btn btn-primary" onclick="confirmCustomize()">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Customer Checkout Details Form Modal -->
+    <div class="modal-overlay" id="checkout-modal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3 class="modal-title"><i class="fas fa-shopping-cart"></i> Delivery Details</h3>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <form id="checkout-form">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="cust-name">Full Name *</label>
+                        <input type="text" id="cust-name" class="form-input" placeholder="e.g., Abdul Rehman" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="cust-phone">Phone Number *</label>
+                        <input type="tel" id="cust-phone" class="form-input" placeholder="e.g., 03001234567" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Order Type</label>
+                        <div class="radio-group">
+                            <label class="custom-radio-label">
+                                <input type="radio" name="order-type" value="Delivery" checked>
+                                <span class="radio-dot"></span>
+                                Delivery
+                            </label>
+                            <label class="custom-radio-label">
+                                <input type="radio" name="order-type" value="Take Away">
+                                <span class="radio-dot"></span>
+                                Take Away
+                            </label>
+                            <label class="custom-radio-label">
+                                <input type="radio" name="order-type" value="Dine-In">
+                                <span class="radio-dot"></span>
+                                Dine-In
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group" id="address-group">
+                        <label for="cust-address">Delivery Address *</label>
+                        <textarea id="cust-address" class="form-input" placeholder="Enter complete home or office street address in Chishtian" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cust-instructions">Special Instructions (Optional)</label>
+                        <textarea id="cust-instructions" class="form-input" placeholder="e.g., Make it spicy, no onions, leave at the door..."></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline close-modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Confirm Order <i class="fas fa-check"></i></button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Confirmation Modal -->
+    <div class="modal-overlay" id="success-modal">
+        <div class="modal-container" style="max-width: 480px;">
+            <div class="modal-header" style="border: none; padding-bottom: 0;">
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body text-center">
+                <div class="success-card">
+                    <div class="success-icon-box"><i class="fas fa-check-circle"></i></div>
+                    <h3 class="success-title">Order Submitted!</h3>
+                    <p class="success-desc">Your order details have been compiled successfully. Please submit it via WhatsApp to finalize your delivery.</p>
+                    
+                    <!-- Styled Invoice box -->
+                    <div class="invoice-box" id="invoice-receipt-details">
+                        <!-- Loaded dynamically from app.js -->
+                    </div>
+
+                    <div class="success-actions">
+                        <a href="#" target="_blank" class="btn btn-secondary" id="success-whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Send Order via WhatsApp
+                        </a>
+                        <button class="btn btn-outline" onclick="printReceipt()" style="margin-top: 0.5rem; width: 100%;">
+                            <i class="fas fa-print"></i> Download / Print Receipt
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Popup -->
+    <div class="toast" id="toast-notification">Item added to cart!</div>
+
+    <!-- Footer Section -->
+    <footer class="brand-footer" id="about-footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <div class="footer-logo">
+                    <i class="fas fa-pizza-slice" style="color: var(--secondary); font-size: 1.6rem;"></i>
+                    <div class="brand-name" style="font-size: 1.3rem;">FIFTH<span>AVENUE</span></div>
+                </div>
+                <p class="footer-about-text">FifthAvenue Pizza Co. is Chishtian's premium spot for gourmet pizzas, premium burgers, delicious wraps, wings, mocktails, and thick shakes. We take pride in sourcing premium fresh ingredients to deliver ultimate satisfaction.</p>
+                <div class="social-icons">
+                    <a href="https://facebook.com" target="_blank" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://instagram.com" target="_blank" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#menu-container">Deals & Combos</a></li>
+                    <li><a href="#menu-container" onclick="document.querySelector('[data-category=\'pizzas\']').click()">Gourmet Pizzas</a></li>
+                    <li><a href="#menu-container" onclick="document.querySelector('[data-category=\'burgers\']').click()">Premium Burgers</a></li>
+                    <li><a href="#menu-container" onclick="document.querySelector('[data-category=\'shakes\']').click()">Creamy Shakes</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column" id="contact-footer">
+                <h4>Get In Touch</h4>
+                <ul class="contact-info-list">
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Commercial Market, Main Bahawalnagar Road, Chishtian</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone-alt"></i>
+                        <span>UAN Helpline: 0304 111 6621<br>Landline: 063 250 1555</span>
+                    </li>
+                    <li>
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp Ordering: 0336 111 6621</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 FifthAvenue Pizza Co. All Rights Reserved.</p>
+            <p><i class="fas fa-store"></i> 9 Branches & Counting...</p>
+        </div>
+    </footer>
+
+    <!-- Core Logic import -->
+    <script src="app.js"></script>
+</body>
+</html>
